@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Aqua Lytix | Dashboard</title>
@@ -35,9 +36,36 @@
             background: #fff;
             border-radius: 8px;
         }
+
+        li {
+            text-decoration: none;
+            list-style: none;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #277de3;
+            padding: 5px;
+            border-radius: 15px;
+            background-color: #277de3;
+            width: 700px;
+        }
     </style>
 </head>
+
 <body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li class="agora">
+                        <a href="./index.html">Inicio</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <h1>Contagem de garrafas totalmente abastecidas na semana</h1>
     <div class="graph-container">
         <canvas id="garrafasChart"></canvas>
@@ -116,4 +144,5 @@
         new Chart(document.getElementById('garrafasChart'), config);
     </script>
 </body>
+
 </html>
