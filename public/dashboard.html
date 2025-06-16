@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aqua Lytix | Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #277de3;
+            margin-bottom: 20px;
+        }
+
+        .graph-container {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px lightskyblue;
+            width: 90%;
+            max-width: 800px;
+        }
+
+        canvas {
+            background: #fff;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contagem de garrafas totalmente abastecidas na semana</h1>
+    <div class="graph-container">
+        <canvas id="garrafasChart"></canvas>
+    </div>
+
+    <script>
+        const dias = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado', 'Domingo'];
+        const garrafas = dias.map(() => Math.floor(Math.random() * 200 + 100)); // 10 a 30 garrafas por dia
+
+        const data = {
+            labels: dias,
+            datasets: [{
+                label: 'Quantidade de Garrafas Coletadas',
+                data: garrafas,
+                backgroundColor: '#277de3',
+                borderRadius: 6
+            }]
+        };
+
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: '',
+                        color: '#000',
+                        font: {
+                            size: 18
+                        }
+                    },
+                    legend: {
+                        labels: {
+                            color: '#000',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Dias da Semana',
+                            color: '#000',
+                            font: {
+                                size: 16
+                            }
+                        },
+                        ticks: {
+                            color: '#000'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Número de Garrafas',
+                            color: '#000',
+                            font: {
+                                size: 16
+                            }
+                        },
+                        ticks: {
+                            color: '#000',
+                            stepSize: 5
+                        }
+                    }
+                }
+            }
+        };
+
+        new Chart(document.getElementById('garrafasChart'), config);
+    </script>
+</body>
+</html>
