@@ -20,6 +20,7 @@ CREATE TABLE usuario (
 	constraint fkCodigoEmpresa foreign key (fk_CodigoAtivacao) references empresa(CodigoAtivacao),
     constraint fkComposta primary key (idUsuario, fk_CodigoAtivacao)
 );
+    SELECT idUsuario, nome, email, fk_CodigoAtivacao as CodigoAtivacao FROM usuario WHERE nickname = 'edu' AND senha = 'edu';
 
 create table registro (
 	idRegistro INT AUTO_INCREMENT,

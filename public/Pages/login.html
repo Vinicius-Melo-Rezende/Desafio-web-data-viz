@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/cadastro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Outfit:wght@100..900&display=swap"
+        rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
     <header>
         <div class="container">
-            <h1 class="titulo"><a href="../index.html">Nome</a></h1>
+            <a href="../index.html"><img id="logo" src="../assets/imgs/logosemfundo.png"></a>
             <nav>
                 <ul>
                     <li class="agora">
@@ -30,13 +35,13 @@
         <div id="containerFormLog">
             <span id="txtCadastrar">Login</span>
             <div id="containerDados">
-                <div class="containerInput">
+                <div class="containerInputLogin">
                     <label class="labelIpt" for="ipt_nickname">Nickname</label>
-                    <input placeholder="ex: Edu" class="iptCadastro" type="text" id="ipt_nickname">
+                    <input placeholder="ex: Edu" class="iptLogin" type="text" id="ipt_nickname">
                 </div>
-                <div class="containerInput">
+                <div class="containerInputLogin">
                     <label class="labelIpt" for="ipt_senha">Senha</label>
-                    <input placeholder="******" class="iptCadastro" type="password" id="ipt_senha">
+                    <input placeholder="******" class="iptLogin" type="password" id="ipt_senha">
                 </div>
                 <div id="containercadastrar">
                     <button id="btnCadastro" onclick="Entrar()">Entrar</button>
@@ -49,7 +54,7 @@
 
 
         function Entrar() {
-    
+
             var nicknameVar = ipt_nickname.value;
             var senhaVar = ipt_senha.value;
 
@@ -60,7 +65,7 @@
                 alert('Preencha os campos!')
                 return false;
             }
-          
+
             fetch("/usuarios/autenticar", {
                 method: "POST",
                 headers: {
@@ -87,7 +92,7 @@
                     window.location = "./dashboard.html"
 
                 } else {
-                 
+
                     console.log("Houve um erro ao tentar realizar o login!");
                     alert("Houve um erro ao tentar realizar o login!");
                     resposta.text().then(texto => {
@@ -106,4 +111,3 @@
 </body>
 
 </html>
-

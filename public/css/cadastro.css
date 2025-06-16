@@ -41,7 +41,7 @@ main {
     height: 80vh;
 }
 
-.containerInput {
+.containerInput, .containerInputLogin {
     display: flex;
     flex-direction: column;
     margin-top: 1%;
@@ -50,11 +50,15 @@ main {
     justify-content: space-evenly;
 }
 
+.containerInputLogin{
+        height: 16%;
+}
+
 #txtCadastrar {
     font-size: 2vw;
 }
 
-.iptCadastro {
+.iptCadastro, .iptLogin {
     all: unset;
     border: 1px solid var(--azulForte);
     height: 43%;
@@ -63,10 +67,13 @@ main {
     border-radius: 5px;
 }
 
-.iptCadastro:focus {
+.iptCadastro:focus, .iptLogin {
     border: 1.3px solid var(--azulVerde);
 }
 
+.iptLogin{
+   height: 15vh;
+}
 .labelIpt {
     font-size: 1.15vw;
 }
@@ -134,5 +141,9 @@ main {
     border-radius: 10px;
     width: 40%;
     padding: 1vw 0;
-    height: 60vh;   
+    height: 60vh;  
+}
+
+#logo{
+    width: 5vw;
 }
