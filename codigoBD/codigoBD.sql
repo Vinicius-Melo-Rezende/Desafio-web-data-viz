@@ -17,16 +17,16 @@ CREATE TABLE usuario (
 	email VARCHAR(50) NOT NULL UNIQUE,
     nickname varchar(45) NOT NULL,
 	senha VARCHAR(50) NOT NULL,
-	fk_CodigoAtivacao int,
+	fk_CodigoAtivacao varchar(50),
 	constraint fkCodigoEmpresa foreign key (fk_CodigoAtivacao) references empresa(CodigoAtivacao),
     constraint fkComposta primary key (idUsuario, fk_CodigoAtivacao)
 );
 
 create table registro (
-	idRegistro INT PRIMARY KEY AUTO_INCREMENT,
+	idRegistro INT AUTO_INCREMENT,
 	dt_registro datetime default current_timestamp,
 	statusVolume boolean,
 	fk_empresa INT,
     constraint fkComposta2 primary key (idRegistro, fk_empresa),
-	constraint fkEmpresa2 FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+	constraint fkEmpresa2 FOREIGN KEY (fk_empresa) REFERENCES empresa(idEmpresa)
 );
