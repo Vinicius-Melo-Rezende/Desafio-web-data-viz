@@ -13,7 +13,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 ```
 2. **Navegar até o diretório**
 ```bash
-    cd webPage
+    cd Desafio-web-data-viz
 ```
 3. **No terminal use o seguinte comando**
 ```bash
@@ -36,7 +36,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 7. **Volte para o terminal**
 ```bash
-    cd ../.. 
+    cd ..
 ```
 
 8. **Agora de o comando para executar a aplicação**
