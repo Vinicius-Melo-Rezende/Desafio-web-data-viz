@@ -31,7 +31,7 @@
                     <input placeholder="ex: eduardo@email.com" class="iptCadastro" type="email" id="ipt_email">
                 </div>
                 <div class="containerInput">
-                    <label class="labelIpt" for="ipt_empresa">Nome da empresa</label>
+                    <label class="labelIpt" for="ipt_empresa">Código da empresa</label>
                     <input placeholder="ex: Crystal" class="iptCadastro" type="text" id="ipt_empresa">
                 </div>
                 <div class="containerInput">
@@ -90,8 +90,7 @@
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    // crie um atributo que recebe o valor recuperado aqui
-                    // Agora vá para o arquivo routes/usuario.js
+    
                     nomeServer: nomeVar,
                     nicknameServer: nicknameVar,
                     empresaServer: empresaVar,
@@ -104,11 +103,11 @@
 
                     if (resposta.ok) { //Status == 200 'ok'
                       alert('Cadastro efetuado')
-
+                        window.location = "./login.html"
                     } else {
                         var erroDaController = await resposta.json(); //Recebe qualquer erro marcado da controller
                         console.log('Erro ao cadastrar')
-                        alert('Erro ao cadastrar: ' + erroDaController.erroEmail)  //Se fosse outro erro sem ser de email acredito que daria um alert inconsistente
+                        alert('Erro ao cadastrar, revise os dados')  //Se fosse outro erro sem ser de email acredito que daria um alert inconsistente
 
                     }
                 })

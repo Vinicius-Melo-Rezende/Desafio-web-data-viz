@@ -39,12 +39,70 @@
                     <input placeholder="******" class="iptCadastro" type="password" id="ipt_senha">
                 </div>
                 <div id="containercadastrar">
-                    <button id="btnCadastro" onclick="entrar()">Entrar</button>
+                    <button id="btnCadastro" onclick="Entrar()">Entrar</button>
                     <div id="linha1"></div>
                 </div>
             </div>
         </div>
     </main>
+    <script>
+
+
+        function Entrar() {
+    
+            var nicknameVar = ipt_nickname.value;
+            var senhaVar = ipt_senha.value;
+
+            if (
+                senhaVar == "" ||
+                nicknameVar == ""
+            ) {
+                alert('Preencha os campos!')
+                return false;
+            }
+          
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nicknameServer: nicknameVar,
+                    senhaServer: senhaVar
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
+
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.NICKNAME_USUARIO = json.nickname;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.ID_USUARIO = json.id;
+                    });
+                    window.location = "./dashboard.html"
+
+                } else {
+                 
+                    console.log("Houve um erro ao tentar realizar o login!");
+                    alert("Houve um erro ao tentar realizar o login!");
+                    resposta.text().then(texto => {
+                        console.error(texto);
+
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+
+            return false;
+        }
+    </script>
 </body>
 
 </html>

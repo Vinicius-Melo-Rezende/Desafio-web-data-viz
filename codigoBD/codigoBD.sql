@@ -10,12 +10,11 @@ CREATE TABLE empresa (
     CodigoAtivacao varchar(50) NOT NULL UNIQUE,
 	cnpj CHAR(14) NOT NULL UNIQUE
 );
-
 CREATE TABLE usuario (
 	idUsuario INT AUTO_INCREMENT,
 	nome VARCHAR(50),
 	email VARCHAR(50) NOT NULL UNIQUE,
-    nickname varchar(45) NOT NULL,
+    nickname varchar(45) NOT NULL unique,
 	senha VARCHAR(50) NOT NULL,
 	fk_CodigoAtivacao varchar(50),
 	constraint fkCodigoEmpresa foreign key (fk_CodigoAtivacao) references empresa(CodigoAtivacao),
