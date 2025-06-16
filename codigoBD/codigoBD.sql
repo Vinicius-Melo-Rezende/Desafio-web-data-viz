@@ -25,6 +25,7 @@ CREATE TABLE usuario (
 create table registro (
 	idRegistro INT PRIMARY KEY AUTO_INCREMENT,
 	dt_registro datetime default current_timestamp,
+	statusVolume boolean,
 	fk_empresa INT,
     constraint fkComposta2 primary key (idRegistro, fk_empresa),
 	constraint fkEmpresa2 FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
