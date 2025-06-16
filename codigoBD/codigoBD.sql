@@ -30,3 +30,10 @@ create table registro (
     constraint fkComposta2 primary key (idRegistro, fk_empresa),
 	constraint fkEmpresa2 FOREIGN KEY (fk_empresa) REFERENCES empresa(idEmpresa)
 );
+
+INSERT INTO empresa (razao_social, NomeFantasia, CodigoAtivacao, cnpj) VALUES
+('Tech Solutions Ltda', 'TechSol', 'ACT12345', '12345678000101'),
+('Agro Vida S.A.', 'AgroVida', 'ACT67890', '98765432000199'),
+('HidroClean Serviços', 'HidroClean', 'ACT11223', '11223344000155'),
+('BlueWater Tecnologia', 'BlueWater', 'ACT44556', '55667788000133'),
+('Green Energy Ltda', 'GreenEnergy', 'ACT77889', '99887766000177');
