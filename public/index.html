@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aqua Lytix</title>
   <link rel="stylesheet" href="./css/estilo.css">
 </head>
+
 <body>
   <center>
     <div class="containertitulo">
-  <h1 id="titulo"><img src="./assets/imgs/logosemfundo.png" class="logo" alt=""> Aqua <br>
-    <span class="lytix">Lytix</span></h1>
+      <h1 id="titulo"><img src="./assets/imgs/logosemfundo.png" class="logo" alt=""> Aqua <br>
+        <span class="lytix">Lytix</span>
+      </h1>
     </div>
-</center>
+  </center>
   <div class="containerbotao">
-  <button id="cadastro">Cadastrar</button>
+    <button id="cadastro">Cadastrar</button>
   </div>
   <div class="containergarrafa">
-  <img src="./assets/imgs/imgGarrafa.png" alt="GarrafaPNG" class="garrafa">
-  <img src="./assets/imgs/imgGarrafaagua.png" alt="GarrafaPNG" class="garrafaagua">
-  <img src="./assets/imgs/agua.png" alt="GarrafaPNG" class="agua">
+    <img src="./assets/imgs/imgGarrafa.png" alt="GarrafaPNG" class="garrafa">
+    <img src="./assets/imgs/imgGarrafaagua.png" alt="GarrafaPNG" class="garrafaagua">
+    <img src="./assets/imgs/agua.png" alt="GarrafaPNG" class="agua">
   </div>
+  <script>
+    var BtnCadastro = document.getElementById('cadastro')
+    BtnCadastro.addEventListener('click', function () {
+      window.location = './Pages/cadastro.html'
+    })
+  </script>
 </body>
+
 </html>
