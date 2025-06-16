@@ -30,6 +30,7 @@ main {
     border-radius: 10px;
     width: 40%;
     padding: 1vw 0;
+    height: 70vh;
 }
 
 #containerDados {
@@ -133,7 +134,8 @@ main {
     }
 }
 
-#containerFormLog{
+
+#containerFormLog {
     display: flex;
     align-items: center;
     flex-direction: column;
