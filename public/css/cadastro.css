@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+}
+
+:root {
+    --tamanho-header: 80px;
+    --tamanho-footer: 65px;
+    --azulClaro: #72A4E3;
+    --azulForte: #277BE3;
+    --azulVerde: #27B7E3;
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fefefe;
+}
+
+#containerForm {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid var(--azulClaro);
+    border-radius: 10px;
+    width: 40%;
+    padding: 1vw 0;
+}
+
+#containerDados {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 80vh;
+}
+
+.containerInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1%;
+    width: 75%;
+    height: 10%;
+    justify-content: space-evenly;
+}
+
+#txtCadastrar {
+    font-size: 2vw;
+}
+
+.iptCadastro {
+    all: unset;
+    border: 1px solid var(--azulForte);
+    height: 43%;
+    padding-left: 0.3vw;
+    font-size: 0.9vw;
+    border-radius: 5px;
+}
+
+.iptCadastro:focus {
+    border: 1.3px solid var(--azulVerde);
+}
+
+.labelIpt {
+    font-size: 1.15vw;
+}
+
+
+#btnCadastro {
+    all: unset;
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 1.2vw;
+    text-align: center;
+    color: var(--azulForte);
+    width: 7vw;
+}
+
+#btnCadastro:hover{
+    color: #2064b7;
+}
+
+#containercadastrar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    height: 5%;
+    transition: 0.5s ease;
+}
+
+#containercadastrar:hover{
+    border-radius: 10px;
+    background: var(--azulForte);
+}
+
+#containercadastrar:hover #btnCadastro{
+    color: #fff;
+} 
+#containercadastrar:hover #linha1{
+    display: none;
+}
+
+#linha1 {
+    height: 2px;
+    width: 20%;
+    background: #000;
+    animation: linha 0.9s ease-in-out infinite alternate;
+    border-radius: 5px;
+}
+
+@keyframes linha {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
